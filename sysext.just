@@ -123,16 +123,16 @@ download-rpms target:
         pre_commands+="{{pre_commands}} ; "
     fi
     if [[ -n "{{copr_repos}}" ]]; then
-        pre_commands+="dnf install -y dnf5-plugins"
+        pre_commands+="dnf5 install -y dnf5-plugins"
         for r in "{{copr_repos}}"; do
-            pre_commands+=" ; dnf copr enable -y ${r}"
+            pre_commands+=" ; dnf5 copr enable -y ${r}"
         done
         pre_commands+=" ; "
     fi
     if [[ -n "{{external_repos}}" ]]; then
-        pre_commands+="dnf install -y dnf5-plugins"
+        pre_commands+="dnf5 install -y dnf5-plugins"
         for r in "{{external_repos}}"; do
-            pre_commands+=" ; dnf config-manager addrepo --from-repofile=${r}"
+            pre_commands+=" ; dnf5 config-manager addrepo --from-repofile=${r}"
         done
         pre_commands+=" ; "
     fi
@@ -143,14 +143,14 @@ download-rpms target:
     cd rpms
     echo "144"
     echo "⬇️ Downloading packages ({{arch}}): ${packages}"
-    # dnf install --downloadonly --downloaddir . ${arch} ${enablerepos} ${packages}
+    # dnf5 install --downloadonly --downloaddir . ${arch} ${enablerepos} ${packages}
     podman run --rm -ti \
         --volume "${PWD}:/var/srv" \
         --volume "${PWD}/../../dnf.cache:/var/cache/libdnf5" \
         --workdir "/var/srv" \
         --security-opt label=disable \
         "{{target}}" \
-        bash -c "${pre_commands}dnf download --resolve ${arch} ${enablerepos} ${packages}"
+        bash -c "${pre_commands}dnf5 download --resolve ${arch} ${enablerepos} ${packages}"
     echo "154"
 # Manual download step, that can be overridden to dowload non RPM content
 download-manual:
@@ -307,7 +307,7 @@ reset-selinux-labels target:
         --security-opt label=disable \
         --privileged \
         "{{target}}" \
-        bash -c "dnf install -y ./rpms/* && cd rootfs && setfiles -r . ${filecontexts} . && chcon --user=system_u --recursive ."
+        bash -c "dnf5 install -y ./rpms/* && cd rootfs && setfiles -r . ${filecontexts} . && chcon --user=system_u --recursive ."
 
 # Creates the EROFS sysext file
 build-erofs target:
