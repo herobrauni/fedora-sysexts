@@ -28,14 +28,6 @@ main() {
         'fedora-kinoite-sysexts'
         
         ${0} \
-        'quay.io/fedora-ostree-desktops/silverblue' \
-        '41' \
-        'Fedora Silverblue (41)' \
-        'fedora-silverblue' \
-        'quay.io/travier' \
-        'fedora-silverblue-sysexts'
-        
-        ${0} \
         'ghcr.io/ublue-os/kinoite-main' \
         '41' \
         'Ublue Kinoite (41)' \
