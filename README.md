@@ -65,52 +65,52 @@ included.
 
 ### Built from Fedora's repos
 
-| Name | Notes |
-|-|-|
-| btop | `btop` and `rocm-smi` dependency for AMD GPU support |
-| chromium | Alternative to the Flatpak which has known issues |
-| compsize | |
-| distrobox | |
-| fuse2 | The `fuse` tools and library, version 2, for AppImage compatibility |
-| gdb | |
-| git-tools | `git-absorb` and `git-delta` |
-| htop | |
-| incus | Work in progress |
-| iwd | Better WiFi daemon and config for NetworkManager to use it by default |
-| just | |
-| krb5-workstation | Kerberos support |
-| libvirtd | `libvirtd`, `qemu-kvm`, `swtpm`, `virt-install` and `guestfs-tools` for server usage (no GUI support) |
-| libvirtd-desktop | `libvirtd`, `qemu`, `swtpm`, `virt-install` and `guestfs-tools` for desktop usage |
-| neovim | |
-| python | Core Python 3 packages |
-| ripgrep | |
-| semanage | SELinux utilities, including those that require Python |
-| strace | |
-| tree | |
-| wireguard-tools | |
-| zoxide | `zoxide` and `fzf` |
-| zsh | |
+| Name             | Notes                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| btop             | `btop` and `rocm-smi` dependency for AMD GPU support                                                  |
+| chromium         | Alternative to the Flatpak which has known issues                                                     |
+| compsize         |                                                                                                       |
+| distrobox        |                                                                                                       |
+| fuse2            | The `fuse` tools and library, version 2, for AppImage compatibility                                   |
+| gdb              |                                                                                                       |
+| git-tools        | `git-absorb` and `git-delta`                                                                          |
+| htop             |                                                                                                       |
+| incus            | Work in progress                                                                                      |
+| iwd              | Better WiFi daemon and config for NetworkManager to use it by default                                 |
+| just             |                                                                                                       |
+| krb5-workstation | Kerberos support                                                                                      |
+| libvirtd         | `libvirtd`, `qemu-kvm`, `swtpm`, `virt-install` and `guestfs-tools` for server usage (no GUI support) |
+| libvirtd-desktop | `libvirtd`, `qemu`, `swtpm`, `virt-install` and `guestfs-tools` for desktop usage                     |
+| neovim           |                                                                                                       |
+| python           | Core Python 3 packages                                                                                |
+| ripgrep          |                                                                                                       |
+| semanage         | SELinux utilities, including those that require Python                                                |
+| strace           |                                                                                                       |
+| tree             |                                                                                                       |
+| wireguard-tools  |                                                                                                       |
+| zoxide           | `zoxide` and `fzf`                                                                                    |
+| zsh              |                                                                                                       |
 
 ### Built from Cisco's OpenH264 repo
 
-| Name | Notes |
-|-|-|
+| Name     | Notes                                    |
+| -------- | ---------------------------------------- |
 | openh264 | OpenH264 library and support for Firefox |
 
 ### Built from RPM Fusion repos
 
-| Name | Notes |
-|-|-|
+| Name          | Notes                                          |
+| ------------- | ---------------------------------------------- |
 | steam-devices | `steam-device` package only (work in progress) |
-| steam | Steam and its dependencies (work in progress) |
+| steam         | Steam and its dependencies (work in progress)  |
 
 ### Built from other repos or sources
 
-| Name | Notes |
-|-|-|
+| Name       | Notes                                                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | monitoring | Collection of monitoring tools from Fedora RPMs (`bwm-ng`, `igt-gpu-tools`, `iotop`) and `bandwhich` from upstream binary releases |
-| vscode | Built from Visual Studio Code official RPM |
-| vscodium | Built from VSCodium RPM releases |
+| vscode     | Built from Visual Studio Code official RPM                                                                                         |
+| vscodium   | Built from VSCodium RPM releases                                                                                                   |
 
 ## Building
 
@@ -136,7 +136,7 @@ $ just targets
 Build the sysext for Fedora CoreOS next:
 
 ```
-$ just build "quay.io/fedora/fedora-coreos:next"
+$ just build "quay.io/fedora/fedora-coreos:next
 ```
 
 I recommend building those from a toolbox as it requires `root` privileges. It

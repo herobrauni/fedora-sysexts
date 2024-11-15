@@ -1,8 +1,8 @@
 name := "vscodium"
 packages := "vscodium"
 base_images := "
-quay.io/fedora-ostree-desktops/silverblue:41
 quay.io/fedora-ostree-desktops/kinoite:41
+ghcr.io/ublue-os/kinoite-main:41
 "
 
 import '../sysext.just'

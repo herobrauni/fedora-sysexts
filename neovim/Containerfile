@@ -1,6 +1,0 @@
-FROM baseimage
-
-RUN dnf install -y \
-    neovim \
-    && \
-    dnf clean all

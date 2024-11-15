@@ -1,7 +1,0 @@
-FROM baseimage
-
-RUN dnf install -y \
-    fuse \
-    fuse-libs \
-    && \
-    dnf clean all

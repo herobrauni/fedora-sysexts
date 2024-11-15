@@ -1,7 +1,0 @@
-name := "python"
-packages := "python3"
-base_images := "quay.io/fedora/fedora-coreos:next"
-
-import '../sysext.just'
-
-all: default
