@@ -6,6 +6,7 @@ quay.io/fedora-ostree-desktops/silverblue:41
 quay.io/fedora-ostree-desktops/kinoite:41
 ghcr.io/ublue-os/bazzite-nvidia-open:stable
 ghcr.io/ublue-os/kinoite-nvidia:41
+ghcr.io/ublue-os/kinoite-main:41
 ghcr.io/ublue-os/aurora:41
 "
 
