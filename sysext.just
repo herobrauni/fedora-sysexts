@@ -97,12 +97,12 @@ download-rpms target:
     #!/bin/bash
     set -euo pipefail
     # set -x
-    echo "100"
+
     # Skip this step if we have not been asked to download packages
     if [[ -z "{{packages}}" ]]; then
         exit 0
     fi
-    echo "105"
+
     enablerepos=""
     if [[ -n "{{enable_repos}}" ]]; then
         for r in {{enable_repos}}; do
@@ -110,12 +110,12 @@ download-rpms target:
             enablerepos+=" --enablerepo=${r}"
         done
     fi
-    echo "113"
+
     arch=""
     for a in {{arch}}; do
         arch+="--arch=${a} "
     done
-    echo "118"
+
     packages="$(echo "{{packages}}" | xargs)"
 
     pre_commands=""
@@ -136,12 +136,12 @@ download-rpms target:
         done
         pre_commands+=" ; "
     fi
-    echo "139"
+
     mkdir -p ../dnf.cache
 
     mkdir rpms
     cd rpms
-    echo "144"
+
     echo "⬇️ Downloading packages ({{arch}}): ${packages}"
     # dnf5 install --downloadonly --downloaddir . ${arch} ${enablerepos} ${packages}
     podman run --rm -ti \
@@ -151,7 +151,7 @@ download-rpms target:
         --security-opt label=disable \
         "{{target}}" \
         bash -c "${pre_commands}dnf5 download --resolve ${arch} ${enablerepos} ${packages}"
-    echo "154"
+
 # Manual download step, that can be overridden to dowload non RPM content
 download-manual:
     #!/bin/bash

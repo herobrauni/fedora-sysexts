@@ -119,13 +119,13 @@ jobs:
           just build ${IMAGE}
           mv "${SYSEXT}"*".raw" "../artifacts/"
 
-      - name: "Build sysext: vscodium"
-        env:
-          SYSEXT: vscodium
-        run: |
-          cd "${SYSEXT}"
-          just build ${IMAGE}
-          mv "${SYSEXT}"*".raw" "../artifacts/"
+      # - name: "Build sysext: vscodium"
+      #   env:
+      #     SYSEXT: vscodium
+      #   run: |
+      #     cd "${SYSEXT}"
+      #     just build ${IMAGE}
+      #     mv "${SYSEXT}"*".raw" "../artifacts/"
 
       - name: "Build sysext: zoxide"
         env:
